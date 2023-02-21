@@ -38,8 +38,9 @@ def kinematic_chain(dh_params):
 
     # Iterate through each row of DH parameters and compute the corresponding homogeneous transformation matrix
     for params in dh_params:
-        a, alpha, d, theta = params
-        H = np.dot(H, dh_transformation(a, alpha, d, theta))
+        #a, alpha, d, theta = params
+        #H = np.dot(H, dh_transformation(a, alpha, d, theta))
+        H = np.matmul(H, params)
 
     return H
     
